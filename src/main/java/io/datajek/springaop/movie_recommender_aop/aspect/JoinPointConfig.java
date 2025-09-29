@@ -8,4 +8,7 @@ public class JoinPointConfig {
 
     @Pointcut("execution(* io.datajek.springaop.movie_recommender_aop.business.*.*(..))")
     public void businessLayerPointcut(){}
+
+    @Pointcut("bean(movie)")
+    public void movieBeanPointcut(){}
 }
