@@ -12,15 +12,15 @@ import org.springframework.context.annotation.Configuration;
 public class ExecutionTImeAspect {
     private Logger  logger = LoggerFactory.getLogger(this.getClass());
 
-    @Around("execution(* io.datajek.springaop.movie_recommender_aop..*.*(..))")
-    public Object calculateExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
-        long startTime = System.currentTimeMillis();
-
-        Object resultValue = joinPoint.proceed();
-
-        long timeTaken = System.currentTimeMillis() - startTime;
-        logger.info("The time taken by {} to complete execution is : {}", joinPoint, timeTaken);
-        // value return by intercepted method.
-        return resultValue;
-    }
+//    @Around("execution(* io.datajek.springaop.movie_recommender_aop..*.*(..))")
+//    public Object calculateExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
+//        long startTime = System.currentTimeMillis();
+//
+//        Object resultValue = joinPoint.proceed();
+//
+//        long timeTaken = System.currentTimeMillis() - startTime;
+//        logger.info("The time taken by {} to complete execution is : {}", joinPoint, timeTaken);
+//        // value return by intercepted method.
+//        return resultValue;
+//    }
 }

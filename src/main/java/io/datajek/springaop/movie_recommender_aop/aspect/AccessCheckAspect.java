@@ -22,7 +22,8 @@ public class AccessCheckAspect {
    // @Before("execution(* io.datajek.springaop.movie_recommender_aop..*.*(String,..)) ||" +
    //         " execution(String io.datajek.springaop.movie_recommender_aop..*.*(..))") // intercept which return String or have String as 1st argument
     // --- intercept all method from anywhere with name ending with "Filtering" or Any Method which returns String
-    @Before("execution(* io.datajek.springaop.movie_recommender_aop..*.*Filtering(..)) || execution(String io.datajek.springaop.movie_recommender_aop..*.*(..))")
+//    @Before("execution(* io.datajek.springaop.movie_recommender_aop..*.*Filtering(..)) || execution(String io.datajek.springaop.movie_recommender_aop..*.*(..))")
+    @Before("io.datajek.springaop.movie_recommender_aop.aspect.JoinPointConfig.businessLayerPointcut()")
     public void before(JoinPoint joinPoint){
         logger.info("Intercepted call before execution: {}", joinPoint );
     }
